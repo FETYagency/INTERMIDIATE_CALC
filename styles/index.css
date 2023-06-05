@@ -1,7 +1,220 @@
 @import url(reset.css);
 @import url(vars.css);
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
 :root{
     font-size: 15px;
     --FF: 'League Spartan', sans-serif;
+}
+
+body{
+    font-family: var(--FF);
+    block-size: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--Very-dark-desaturated-blue);
+}
+
+
+/* UI blocks styling *//* UI blocks styling *//* UI blocks styling */
+
+
+
+/* the calculator header */
+.calculator_wrapper{
+    inline-size: min(540px, 96%);
+}
+.calculator_wrapper>header,.theme_switcher_block,.theme_number,.theme_btn{
+    /* a flex box layout */
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}   
+.theme_switcher_block{
+    gap: 1.73rem;
+}
+.theme_number{
+    margin-block-end: 5px;
+    
+    /* flex properties */
+    align-items:baseline;
+    justify-content: center;
+    gap: .93rem;
+}
+.theme_btn{
+    background-color: var(--Very-dark-desaturated-blue-TOG_KEYPAD);
+    padding-block: 5px;
+    padding-inline: 5px;
+    border-radius: 16px;
+    /* flex properties */
+    gap: .45rem;
+
+}
+.theme_choice{
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    inline-size: 16px;
+    block-size: 16px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.theme_choice.selected{
+    background-color: var(--Red);
+}
+/* the screen block */
+.screen{
+    background-color: var(--Very-dark-desaturated-blue-SCREEN);
+    border-radius: 10px;
+    text-align: end;
+    padding-block: 2.66rem 2.4rem;
+    padding-inline: 0 2.13rem;
+    margin-block: 2.06rem 1.6rem;
+    color: var(--White);
+}
+/* THE KEYPAD SECTION */
+.keypad{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5,64px);
+    gap:1.66666rem;
+
+
+    background-color: var(--Very-dark-desaturated-blue-TOG_KEYPAD);
+    padding: 2.13rem;
+    border-radius: 10px;
+    
+}
+#reset,#equal{
+    grid-column: 1/-3;
+    grid-row: -1/-2;
+}
+#equal{
+    grid-column: -3/-1;
+
+}
+.key,.arithmetic{
+    color: var(--Very-dark-grayish-blue);
+    background-color: var(--Light-grayish-orange);
+    box-shadow: inset 0px -4px 0px var(--Grayish-orange);
+    border-radius: 10px;
+    border: none;
+    appearance: none;
+    overflow: hidden;
+
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 37px;
+
+    position: relative;
+    transition: all .3s ease;
+}
+.key:focus{
+    box-shadow: inset 0px 3px 5px var(--Grayish-orange);
+}
+#delete:focus,#reset:focus{
+    box-shadow: inset 0px 3px 5px var(--Desaturated-dark-blue-keys_shadow);
+}
+#equal:focus{
+    box-shadow: inset 0px 3px 5px var(--Dark-red);
+}
+#equal{
+    color: var(--White);
+    background-color: var(--Red);
+    box-shadow: inset 0px -4px 0px var(--Dark-red);
+    border-radius: 10px;
+    border: none;
+    appearance: none;
+
+
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 26px;
+
+    transition: all .3s ease;
+}
+#delete,#reset{
+    color: var(--White);
+    background-color: var(--Desaturated-dark-blue-keys );
+    box-shadow: inset 0px -4px 0px var(--Desaturated-dark-blue-keys_shadow);
+    border-radius: 10px;
+    border: none;
+    appearance: none;
+
+
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 26px;
+
+    transition: all .3s ease;
+}
+
+/* text content styling *//* text content styling *//* text content styling */
+h1{
+    font-size: 2.13rem;
+    line-height: 1.93rem;
+    letter-spacing: -0.533333px;
+    margin-block-end: 1px;
+}
+.label{
+    font-size: .8rem;
+    line-height: 0.73rem;
+    letter-spacing: 1px;
+    margin-block-end: 7px;
+}
+.result{
+    font-size: 3.73rem;
+    line-height: 3.46rem;
+    letter-spacing: -0.933333px;
+}
+
+
+/* MOBILE DESIGN */
+@media(width<540px){
+    .calculator_wrapper{
+        inline-size: min(327px, 96%);
+    }
+    .keypad{
+        display: grid;
+        grid-template-columns: repeat(4, min(60px, 1fr));
+        grid-template-rows: repeat(5,64px);
+        gap:0.86rem;
+    
+    
+        background-color: var(--Very-dark-desaturated-blue-TOG_KEYPAD);
+        padding: 1.6rem;
+        border-radius: 10px;
+        
+    }
+    .key{
+        font-size: 32px;
+        line-height: 29px;
+    }
+    #delete,#reset{
+        font-size: 20px;
+        line-height: 18px;  
+    }
+}
+
+
+/* theme specific changes */
+header.theme1{
+    color: var(--White);
+}
+.screen.theme1{
+    color: var(--White);
+}
+
+header.theme2{
+    color: var(--Very-dark-grayish-blue);
+}
+.screen.theme2{
+    color: var(--Very-dark-grayish-blue);
+}
+
+header.theme3{
+    color: var(--Very-dark-grayish-blue);
+}
+.screen.theme3{
+    color: var(--Very-dark-grayish-blue);
+    background-color: var(--Very-dark-desaturated-blue-TOG_KEYPAD );
 }

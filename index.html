@@ -13,11 +13,80 @@
 
 
 
-  <main class="wrapper">
+  <main class="calculator_wrapper">
+
+
+    <header class="theme1">
+      <!-- the titla of the calculator -->
+      <h1>calc</h1>
+
+      <!-- the theme switcher -->
+      <div class="theme_switcher_block">
+
+        <p class="label">THEME</p>
+
+        <div class="theme_container">
+
+          <!-- these are the numbers to destinguish between themes and their order in th UI -->
+          <div class="theme_number">
+            <div class="number">1</div>
+            <div class="number">2</div>
+            <div class="number">3</div>
+          </div>
+
+          <!-- these are the buttons to choose the desired theme -->
+          <div class="theme_btn">
+            <button class="theme_choice selected" value="1"></button>
+            <button class="theme_choice " value="2"></button>
+            <button class="theme_choice " value="3"></button>
+          </div>
+          
+        </div>
+
+      </div>
+    </header>
+
+
+    <!-- the calculator screen (output) -->
+
+    <div class="screen">
+      <div class="result">399,981</div>
+    </div>
+    
+
+    <!-- the keypad section -->
+
+    <div class="keypad">
+      <button class="key" value="7"></button>
+      <button class="key" value="8"></button>
+      <button class="key" value="9"></button>
+      <button id="delete">DEL</button>
+      <button class="key" value="4"></button>
+      <button class="key" value="5"></button>
+      <button class="key" value="6"></button>
+      <button class="arithmetic " value="+"></button>
+      <button class="key" value="1"></button>
+      <button class="key" value="2"></button>
+      <button class="key" value="3"></button>
+      <button class="arithmetic" value="-"></button>
+      <button class="key" value="."></button>
+      <button class="key" value="0"></button>
+      <button class="arithmetic" value="/"></button>
+      <button class="arithmetic" value="*"></button>
+
+
+      <button id="reset">RESET</button>
+      <button id="equal">=</button>
+
+
+
+
+    </div>
     
   </main>
   
   
 
+  <script src="script/index.js"></script>
 </body>
 </html>

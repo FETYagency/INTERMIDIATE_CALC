@@ -1,0 +1,123 @@
+:root[data-theme="BLUE_NIGHT"]{
+/* #### Backgrounds *//* #### Backgrounds *//* #### Backgrounds */
+
+/* (main background) */
+--Very-dark-desaturated-blue : hsl(222, 26%, 31%);
+/* (toggle background, keypad background) */
+--Very-dark-desaturated-blue-TOG_KEYPAD : hsl(223, 31%, 20%);
+/* (screen background) */
+--Very-dark-desaturated-blue-SCREEN : hsl(224, 36%, 15%);
+
+
+
+
+
+/* #### Keys *//* #### Keys *//* #### Keys *//* #### Keys */
+
+/* (key background) */
+--Desaturated-dark-blue-keys : hsl(225, 21%, 49%);
+/* (key shadow) */
+--Desaturated-dark-blue-keys_shadow : hsl(224, 28%, 35%);
+
+/* (key background, toggle) */
+--Red : hsl(6, 63%, 50%);
+/* (key shadow) */
+--Dark-red : hsl(6, 70%, 34%);
+/* (key background) */
+--Light-grayish-orange : hsl(30, 25%, 89%);
+/* (key shadow) */
+--Grayish-orange : hsl(28, 16%, 65%);
+
+
+
+
+/* #### Text *//* #### Text *//* #### Text *//* #### Text */
+
+--Very-dark-grayish-blue: hsl(221, 14%, 31%);
+--White: hsl(0, 0%, 100%);
+}
+
+/* white theme */
+
+:root[data-theme="WHITE"]{
+    /* #### Backgrounds *//* #### Backgrounds *//* #### Backgrounds */
+    
+    /* (main background) */
+    --Very-dark-desaturated-blue : hsl(0, 0%, 90%);
+    /* (toggle background, keypad background) */
+    --Very-dark-desaturated-blue-TOG_KEYPAD : hsl(0, 5%, 81%);
+    /* (screen background) */
+    --Very-dark-desaturated-blue-SCREEN : hsl(0, 0%, 93%);
+    
+    
+    
+    
+    
+    /* #### Keys *//* #### Keys *//* #### Keys *//* #### Keys */
+    
+    /* (key background) */
+    --Desaturated-dark-blue-keys : hsl(185, 42%, 37%);
+    /* (key shadow) */
+    --Desaturated-dark-blue-keys_shadow : hsl(185, 58%, 25%);
+    
+    /* (key background, toggle) */
+    --Red : hsl(25, 98%, 40%);
+    /* (key shadow) */
+    --Dark-red : hsl(25, 99%, 27%);
+    /* (key background) */
+    --Light-grayish-orange : hsl(45, 7%, 89%);
+    /* (key shadow) */
+    --Grayish-orange : hsl(35, 11%, 61%);
+    
+    
+    
+    
+    /* #### Text *//* #### Text *//* #### Text *//* #### Text */
+    
+    --Very-dark-grayish-blue: hsl(60, 10%, 19%);
+    --White: hsl(0, 0%, 100%);
+}
+
+
+
+
+
+
+/* the purple theme */
+
+    :root[data-theme="PURPLE"]{
+        /* #### Backgrounds *//* #### Backgrounds *//* #### Backgrounds */
+        
+        /* (main background) */
+        --Very-dark-desaturated-blue : hsl(268, 75%, 9%);
+        /* (toggle background, keypad background and screeb) */
+        --Very-dark-desaturated-blue-TOG_KEYPAD : hsl(268, 71%, 12%);
+        
+        
+        
+        
+        /* #### Keys *//* #### Keys *//* #### Keys *//* #### Keys */
+        
+        /* (key background) */
+        --Desaturated-dark-blue-keys : hsl(281, 89%, 26%);
+        /* (key shadow) */
+        --Desaturated-dark-blue-keys_shadow : hsl(285, 91%, 52%);
+        
+        /* (key background, toggle) */
+        --Red : hsl(176, 100%, 44%);
+        /* (key shadow) */
+        --Dark-red : hsl(177, 92%, 70%);
+        /* (key background) */
+        --Light-grayish-orange : hsl(268, 47%, 21%);
+        /* (key shadow) */
+        --Grayish-orange : hsl(290, 70%, 36%);
+        
+        
+        
+        
+        /* #### Text *//* #### Text *//* #### Text *//* #### Text */
+        
+        --Very-dark-grayish-blue: hsl(52, 100%, 62%);
+        --Very-dark-blue: hsl(198, 20%, 13%);
+        --White: hsl(0, 0%, 100%);
+        }
