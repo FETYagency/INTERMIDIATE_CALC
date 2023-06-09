@@ -57,6 +57,7 @@ keys.forEach(e=>{
     
     e.addEventListener("click", ()=>{
         let arithRegex = /(?<=\d)[\+|\-|\/|\*|\.]{2}/g;
+
         switch (e.value) {
             case "*":
                 result.textContent+= e.value;
@@ -100,27 +101,65 @@ keys.forEach(e=>{
     })
 });
 
+
+
+
+
 reset.addEventListener("click",()=>{
     result.textContent= "0";
 })
+
+
+
+
 del.addEventListener("click",()=>{
     result.textContent=result.textContent.split("").slice(0,-1).join("")
     if(result.textContent.length<1){
         result.textContent= "0";
     }
 })
+
+
+
 equal.addEventListener("click", ()=>{
+
+    let FIRST_OP_REGEX = /\d+\.?\d*(?=\+|\-|\/|\*)/g;
+    let FIRST_OP= FIRST_OP_REGEX.test(result.textContent)? Number(result.textContent.match(FIRST_OP_REGEX)[0]) : "not found"; 
+
+    let SECOND_OP_REGEX =  /(?<=\+|\-|\/|\*)\d+\.?\d*/g;
+    let SECOND_OP= SECOND_OP_REGEX.test(result.textContent)? Number(result.textContent.match(SECOND_OP_REGEX)[0]) : "not found";
+
+    let OPERATION_REGEX = /\/|\*|\-|\+{1}/g;
+    let OPERATION = OPERATION_REGEX.test(result.textContent)? result.textContent.match(OPERATION_REGEX)[0]  : "not found"  
+    
+    let RESULT
     try{
-        result.textContent= eval(result.textContent)
-        if(isNaN(result.textContent)){
-            throw(new Error("can't happen"))
-        }
+            switch (OPERATION) {
+                case "*":
+                    RESULT = Number(FIRST_OP * SECOND_OP);
+                    break;
+                case "/":
+                    RESULT = Number(FIRST_OP / SECOND_OP);
+                    break;
+                case "+":
+                    RESULT = Number(FIRST_OP + SECOND_OP);
+                    break;
+                case "-":
+                    RESULT = Number(FIRST_OP - SECOND_OP);
+                    break;
+                default:
+                    RESULT = NaN;
+            }
+            result.textContent= RESULT;
+
+            if(isNaN(RESULT)){
+                throw(new Error("Two operands required"))
+            }
     }catch(err){
-        result.textContent=  err
+        result.textContent=  err.message
         setTimeout(()=>{
             result.textContent=  "0"
-        }, 900)
+        }, 1200)
     }
-})
 
-console.log(0/0)
+})
